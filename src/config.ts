@@ -7,6 +7,7 @@ export const themeConfig: ThemeConfig = {
     title: 'Monero Identity Forum', // Site title
     author: 'MIF', // Author name
     description: 'Monero Identity Forum', // Site description
+    language: 'en-US' // Default language
   },
 
   // GENERAL SETTINGS ////////////////////////////////////////////////////////////////////////////////////
