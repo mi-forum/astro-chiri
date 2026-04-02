@@ -10,7 +10,7 @@ const { toc = [] }: TOCProps = Astro.props
     <ul class="toc-list" id="toc-list">
       <!-- Back to top link -->
       <li class="toc-item toc-level-0">
-        <a href="#" class="toc-link toc-title" title="Back to top" data-text="Back to top"> Back to top </a>
+        <a href="#" class="toc-link toc-title"></a>
       </li>
 
       <!-- TOC items -->
@@ -54,7 +54,7 @@ const { toc = [] }: TOCProps = Astro.props
       if (!state.container) return false
 
       state.links = document.querySelectorAll('.toc-link')
-      state.headings = document.querySelectorAll('h1, h2, h3')
+      state.headings = document.querySelectorAll('h1, h2, h3, h4')
       state.titleLink = document.querySelector('.toc-link.toc-title')
 
       // Build heading map
@@ -305,27 +305,20 @@ const { toc = [] }: TOCProps = Astro.props
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    transition:
-      color 0.2s ease-out,
-      font-size 0.2s ease-out,
-      text-indent 0.2s ease-out;
     cursor: pointer;
   }
 
   .toc-link::after {
     content: attr(data-text);
     position: absolute;
-    left: -0.5rem;
+    left: -0.1rem;
     top: 0;
     font-family: var(--sans);
     font-size: var(--font-size-s);
     letter-spacing: var(--spacing-m);
     line-height: 1.125rem;
     color: var(--text-primary);
-    opacity: 0;
-    transition:
-      opacity 0.2s ease-out,
-      left 0.2s ease-out;
+    opacity: 1;
     pointer-events: none;
     overflow: hidden;
     white-space: nowrap;
@@ -335,7 +328,7 @@ const { toc = [] }: TOCProps = Astro.props
 
   .toc-link:hover::after {
     opacity: 1;
-    left: -0.75rem;
+    left: -0.5rem;
   }
 
   .toc-level-0 .toc-link:hover::after {
@@ -344,7 +337,8 @@ const { toc = [] }: TOCProps = Astro.props
 
   .toc-level-1 .toc-link:hover::before,
   .toc-level-2 .toc-link:hover::before,
-  .toc-level-3 .toc-link:hover::before {
+  .toc-level-3 .toc-link:hover::before,
+  .toc-level-4 .toc-link:hover::before {
     width: 0.75rem;
     transition: width 0.1s ease-out;
   }
@@ -357,7 +351,8 @@ const { toc = [] }: TOCProps = Astro.props
   .toc-level-0 .toc-link::before,
   .toc-level-1 .toc-link::before,
   .toc-level-2 .toc-link::before,
-  .toc-level-3 .toc-link::before {
+  .toc-level-3 .toc-link::before,
+  .toc-level-4 .toc-link::before {
     content: '';
     position: absolute;
     left: 0;
@@ -374,6 +369,28 @@ const { toc = [] }: TOCProps = Astro.props
   .toc-link.active::before {
     opacity: 0.8;
     background-color: var(--text-primary);
+  }
+
+  .toc-level-1 .toc-link::after,
+  .toc-level-2 .toc-link::after {
+    left: 0.5rem;
+  }
+  .toc-level-3 .toc-link::after {
+    left: 1.5rem;
+  }
+  .toc-level-4 .toc-link::after {
+    left: 2.5rem;
+  }
+
+  .toc-level-1 .toc-link:hover::after,
+  .toc-level-2 .toc-link:hover::after {
+    left: 0.5rem;
+  }
+  .toc-level-3 .toc-link:hover::after {
+    left: 1.5rem;
+  }
+  .toc-level-4 .toc-link:hover::after {
+    left: 2.5rem;
   }
 
   /* Hide on mobile */
