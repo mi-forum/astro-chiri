@@ -4,9 +4,9 @@ export const themeConfig: ThemeConfig = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
   site: {
     website: 'https://example.mi-forum.xyz', // Site domain
-    title: 'Monero Identity Forum', // Site title
+    title: 'Monero Identity Forum (example)', // Site title
     author: 'MIF', // Author name
-    description: 'Monero Identity Forum', // Site description
+    description: 'Monero Identity Forum (example)', // Site description
     language: 'en-US' // Default language
   },
 
