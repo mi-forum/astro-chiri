@@ -13,10 +13,9 @@ import remarkTOC from './src/plugins/remark-toc.mjs'
 import { themeConfig } from './src/config'
 import { imageConfig } from './src/utils/image-config'
 import path from 'path'
-import netlify from '@astrojs/netlify'
 
 export default defineConfig({
-  adapter: netlify(), // Set adapter for deployment, or set `linkCard` to `false` in `src/config.ts`
+  output: 'static',
   site: themeConfig.site.website,
   image: {
     service: {
@@ -26,6 +25,10 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
+      themes: {
+        dark: 'github-dark',
+        light: 'github-dark',
+      },
       theme: 'css-variables',
       wrap: false
     },
