@@ -3,7 +3,7 @@ import type { ThemeConfig } from './types'
 export const themeConfig: ThemeConfig = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
   site: {
-    website: 'https://example.mi-forum.xyz', // Site domain
+    website: 'https://papier.mi-forum.xyz', // Site domain
     title: 'Monero Identity Forum (example)', // Site title
     author: 'MIF', // Author name
     description: 'Monero Identity Forum (example)', // Site description
