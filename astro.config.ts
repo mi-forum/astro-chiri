@@ -16,7 +16,7 @@ import path from 'path'
 
 export default defineConfig({
   output: 'static',
-  site: themeConfig.site.website,
+  site: 'https://example.mi-forum.xyz',
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
